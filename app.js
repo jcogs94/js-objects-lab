@@ -72,6 +72,10 @@ Exercise 6
 Solve Exercise 6 here:
 */
 
+game.party.sort((a, b) => {
+    return b.hp - a.hp;
+})
+
 /*
 Exercise 7
 1. Set the `completed` property to true for gyms with a difficulty below 3.
