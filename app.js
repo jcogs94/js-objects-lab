@@ -18,13 +18,6 @@ const game = {
     ],
 }
 
-
-// Exercise 1
-console.dir(pokemon, { maxArrayLength: null })
-
-// Exercise 2
-console.log(game)
-
 /*
 Exercise 3
 1. Add a new property to the `game` object. Let's call it "difficulty".
@@ -254,3 +247,7 @@ Log the object when it's constructed.
 
 Solve Exercise 21 here:
 */
+
+
+console.log(game)
+// console.dir(pokemon, { maxArrayLength: null })
