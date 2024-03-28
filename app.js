@@ -39,7 +39,7 @@ Solve Exercise 4 here:
 */
 
 for (let entry of pokemon) {
-    if (entry.name === 'Charmander')
+    if (entry.starter === true && entry.type === 'fire')
         game.party.push(entry);
 }
 
@@ -51,6 +51,17 @@ Exercise 5
 
 Solve Exercise 5 here:
 */
+
+for (let entry of pokemon) {
+    if (entry.starter === false && entry.type === 'water' && entry.hp > 100)
+        game.party.push(entry);
+
+    if (entry.starter === false && entry.type === 'electric' && entry.hp < 30)
+        game.party.push(entry);
+    
+    if (entry.starter === false && entry.type === 'rock' && entry.hp === 40)
+        game.party.push(entry);
+}
 
 /*
 Exercise 6
