@@ -27,6 +27,8 @@ Exercise 3
 Solve Exercise 3 here:
 */
 
+game.difficulty = 'Hard';
+
 /*
 Exercise 4
 1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
