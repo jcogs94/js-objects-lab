@@ -85,6 +85,11 @@ Exercise 7
 Solve Exercise 7 here:
 */
 
+for (let easyGyms of game.gyms) {
+    if (easyGyms.difficulty < 3)
+        easyGyms.completed = true;
+}
+
 /*
 Exercise 8
 1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
