@@ -38,6 +38,13 @@ Exercise 4
 Solve Exercise 4 here:
 */
 
+let index = 0;
+for (let i = 0; i < pokemon.length; i++)
+    if (pokemon[i].name === 'Charmander')
+        index = i;
+
+game.party.push(pokemon[index]);
+
 /*
 Exercise 5
 1. Choose three more Pokémon from the `pokemon` array and add them to your party.
