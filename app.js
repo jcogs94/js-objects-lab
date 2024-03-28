@@ -106,6 +106,12 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 8 here:
 */
 
+for (let i = 0; i < game.party.length; i++) {
+    if (game.party[i].number === 4) {
+        game.party.splice(i, 1, pokemon[4])
+    }
+}
+
 /*
 Exercise 9
 1. Print the name of each Pokémon in your party.
