@@ -85,10 +85,21 @@ Exercise 7
 Solve Exercise 7 here:
 */
 
-for (let easyGyms of game.gyms) {
-    if (easyGyms.difficulty < 3)
-        easyGyms.completed = true;
+// // First attempt at exercise
+// for (let easyGyms of game.gyms) {
+//     if (easyGyms.difficulty < 3)
+//         easyGyms.completed = true;
+// }
+
+// Changed to method of game obj
+game.completeGymByDiff = (diff) => {
+  for (let gym of game.gyms) {
+    if (gym.completed === false && gym.difficulty < diff)
+        gym.completed = true;
+  }
 }
+
+game.completeGymByDiff(3);
 
 /*
 Exercise 8
@@ -194,10 +205,14 @@ Exercise 13
 Solve Exercise 13 here:
 */
 
-for (let mediumGyms of game.gyms) {
-  if (mediumGyms.completed === false && mediumGyms.difficulty < 6)
-      mediumGyms.completed = true;
-}
+// // First attempt at exercise, changed to method of game obj
+// for (let mediumGyms of game.gyms) {
+//   if (mediumGyms.completed === false && mediumGyms.difficulty < 6)
+//       mediumGyms.completed = true;
+// }
+
+// Using method of game created on line 95
+game.completeGymByDiff(6);
 
 /*
 Exercise 14
@@ -267,6 +282,8 @@ Exercise 16
 
 Solve Exercise 16 here:
 */
+
+
 
 /*
 Exercise 17
