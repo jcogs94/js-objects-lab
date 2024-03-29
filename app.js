@@ -120,7 +120,7 @@ let partyNames = []
 for (let i = 0; i < game.party.length; i++) {
     partyNames.push(game.party[i].name)
 }
-console.log(partyNames.join(', '));
+console.log('Current Party: \n' + partyNames.join(', '));
 
 /*
 Exercise 10
@@ -130,6 +130,13 @@ Exercise 10
 
 Solve Exercise 10 here:
 */
+
+let starterPokemon = []
+for (let entry of pokemon) {
+  if (entry.starter === true)
+      starterPokemon.push(entry.name);
+}
+console.log('Starter Pokemon: \n' + starterPokemon.join(', '));
 
 /*
 Exercise 11
