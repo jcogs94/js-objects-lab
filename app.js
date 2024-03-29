@@ -349,6 +349,32 @@ Also, ensure that the Pokemon isn't added to the `game.party` or the `game.colle
 Solve Exercise 19 here:
 */
 
+game.items[1].quantity = 0;
+
+game.catchPokemon = pokemonObj => {
+  for (let item of game.items) {
+    if (item.name === 'pokeball') {
+      if (item.quantity < 1) {
+        console.log(`There are not enough pokeballs to catch ${pokemonObj.name}.`);
+      }
+      else {
+        item.quantity--;
+        console.log(`You caught ${pokemonObj.name} successfully!`);
+        if (game.partyCount() === 6) {
+          game.collection.push(pokemonObj);
+          console.log(`${pokemonObj.name} was sent to Bill's PC.`);
+        }
+        else
+          game.party.push(pokemonObj);
+      }
+    }   
+  }
+}
+
+game.catchPokemon(pokemon[76]);
+// console.log(game.items);
+// console.log(game);
+
 /*
 Exercise 20
 Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify is so that you can just pass in the name of a Pokemon instead of an entire object, and the method will look up the Pokemon from the data set for you.
