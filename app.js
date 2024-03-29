@@ -352,24 +352,18 @@ Solve Exercise 19 here:
 game.items[1].quantity = 0;
 
 game.catchPokemon = pokemonObj => {
-  for (let item of game.items) {
-    if (item.name === 'pokeball') {
-      if (item.quantity < 1) {
-        console.log(`There are not enough pokeballs to catch ${pokemonObj.name}.`);
-      }
-      else {
-        item.quantity--;
-        console.log(`You caught ${pokemonObj.name} successfully!`);
-        if (game.partyCount() === 6) {
-          game.collection.push(pokemonObj);
-          console.log(`${pokemonObj.name} was sent to Bill's PC.`);
-        }
-        else
-          game.party.push(pokemonObj);
-      }
-      break;
-    }   
+  if (game.items[1].quantity > 1) {
+    game.items[1].quantity--;
+    console.log(`You caught ${pokemonObj.name} successfully!`);
+    if (game.partyCount() === 6) {
+      game.collection.push(pokemonObj);
+      console.log(`${pokemonObj.name} was sent to Bill's PC.`);
+    }
+    else
+      game.party.push(pokemonObj);
   }
+  else
+    console.log(`There are not enough pokeballs to catch ${pokemonObj.name}.`);
 }
 
 game.catchPokemon(pokemon[76]);
@@ -386,6 +380,27 @@ If there is not a match, then return a string noting that the selected Pokemon d
 
 Solve Exercise 20 here:
 */
+
+game.items[1].quantity = 0;
+
+game.catchPokemon = pokemonObj => {
+  if (game.items[1].quantity > 1) {
+    game.items[1].quantity--;
+    console.log(`You caught ${pokemonObj.name} successfully!`);
+    if (game.partyCount() === 6) {
+      game.collection.push(pokemonObj);
+      console.log(`${pokemonObj.name} was sent to Bill's PC.`);
+    }
+    else
+      game.party.push(pokemonObj);
+  }
+  else
+    console.log(`There are not enough pokeballs to catch ${pokemonObj.name}.`);
+}
+
+game.catchPokemon(pokemon[76]);
+// console.log(game.items);
+// console.log(game);
 
 /*
 Exercise 21
