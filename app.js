@@ -381,24 +381,30 @@ If there is not a match, then return a string noting that the selected Pokemon d
 Solve Exercise 20 here:
 */
 
-game.items[1].quantity = 0;
+game.items[1].quantity = 4;
 
-game.catchPokemon = pokemonObj => {
-  if (game.items[1].quantity > 1) {
-    game.items[1].quantity--;
-    console.log(`You caught ${pokemonObj.name} successfully!`);
-    if (game.partyCount() === 6) {
-      game.collection.push(pokemonObj);
-      console.log(`${pokemonObj.name} was sent to Bill's PC.`);
+game.catchPokemon = pokemonName => {
+  for (let entry of pokemon) {
+    if (entry.name.toLowerCase() === pokemonName.toLowerCase()) {
+      console.log("pokemon found.");
     }
-    else
-      game.party.push(pokemonObj);
   }
-  else
-    console.log(`There are not enough pokeballs to catch ${pokemonObj.name}.`);
+
+  // if (game.items[1].quantity > 1) {
+  //   game.items[1].quantity--;
+  //   console.log(`You caught ${pokemonObj.name} successfully!`);
+  //   if (game.partyCount() === 6) {
+  //     game.collection.push(pokemonObj);
+  //     console.log(`${pokemonObj.name} was sent to Bill's PC.`);
+  //   }
+  //   else
+  //     game.party.push(pokemonObj);
+  // }
+  // else
+  //   console.log(`There are not enough pokeballs to catch ${pokemonObj.name}.`);
 }
 
-game.catchPokemon(pokemon[76]);
+game.catchPokemon('gyAraDos');
 // console.log(game.items);
 // console.log(game);
 
