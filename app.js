@@ -170,7 +170,7 @@ game.catchPokemon = pokemonObj => {
 }
 
 game.catchPokemon(pokemon[146]);
-printPartyNames();
+// printPartyNames();
 
 /*
 Exercise 12
@@ -194,7 +194,7 @@ game.catchPokemon = pokemonObj => {
 }
 
 game.catchPokemon(pokemon[62]);
-printPartyNames();
+// printPartyNames();
 console.log(game.items[1].name + ': ' + game.items[1].quantity);
 
 /*
@@ -248,7 +248,7 @@ game.gymStatus = () => {
     else
       gymTally.incomplete ++;
   }
-  console.log('Gym Status:\n' + `Completed: ${gymTally.completed}\nIncomplete: ${gymTally.incomplete}`);
+  console.log('>> Gym Status <<\n' + `Completed: ${gymTally.completed}\nIncomplete: ${gymTally.incomplete}`);
 }
 
 game.gymStatus();
@@ -293,6 +293,8 @@ Exercise 17
 
 Solve Exercise 17 here:
 */
+
+console.log(game);
 
 // >> LEVEL UP << //
 /*
