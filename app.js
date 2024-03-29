@@ -194,6 +194,11 @@ Exercise 13
 Solve Exercise 13 here:
 */
 
+for (let mediumGyms of game.gyms) {
+  if (mediumGyms.completed === false && mediumGyms.difficulty < 6)
+      mediumGyms.completed = true;
+}
+
 /*
 Exercise 14
 1. Create a `gymStatus` method in `game` to tally completed and incomplete gyms.
@@ -314,5 +319,5 @@ Solve Exercise 21 here:
 */
 
 
-// console.log(game)
+console.log(game)
 // console.dir(pokemon, { maxArrayLength: null })
