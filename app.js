@@ -294,7 +294,7 @@ Exercise 17
 Solve Exercise 17 here:
 */
 
-console.log(game);
+// console.log(game);
 
 // >> LEVEL UP << //
 /*
@@ -315,6 +315,28 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 
 Solve Exercise 18 here:
 */
+
+game.collection = [];
+
+game.catchPokemon = pokemonObj => {
+  console.log(`You caught ${pokemonObj.name} successfully!`);
+  if (game.partyCount() === 6) {
+    game.collection.push(pokemonObj);
+    console.log(`${pokemonObj.name} was sent to Bill's PC.`);
+  }
+  else {
+    game.party.push(pokemonObj);
+  }
+  
+  for (let item of game.items) {
+    if (item.name === 'pokeball')
+      item.quantity--;
+  }
+}
+
+game.catchPokemon(pokemon[65]);
+// console.log(game.items);
+// console.log(game);
 
 /*
 Exercise 19
