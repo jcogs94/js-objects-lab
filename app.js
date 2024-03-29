@@ -116,11 +116,15 @@ Exercise 9
 Solve Exercise 9 here:
 */
 
-let partyNames = []
-for (let i = 0; i < game.party.length; i++) {
-    partyNames.push(game.party[i].name)
+const printPartyNames = () => {
+  let partyNames = []
+  for (let i = 0; i < game.party.length; i++) {
+      partyNames.push(game.party[i].name)
+  }
+  console.log('Current Party: \n' + partyNames.join(', '));
 }
-console.log('Current Party: \n' + partyNames.join(', '));
+
+printPartyNames();
 
 /*
 Exercise 10
@@ -149,6 +153,13 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 
 Solve Exercise 11 here:
 */
+
+game.catchPokemon = pokemonObj => {
+  game.party.push(pokemonObj);
+}
+
+game.catchPokemon(pokemon[146]);
+printPartyNames();
 
 /*
 Exercise 12
@@ -291,5 +302,5 @@ Solve Exercise 21 here:
 */
 
 
-console.log(game)
+// console.log(game)
 // console.dir(pokemon, { maxArrayLength: null })
