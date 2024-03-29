@@ -283,7 +283,8 @@ Exercise 16
 Solve Exercise 16 here:
 */
 
-
+game.completeGymByDiff(8);
+// game.gymStatus();
 
 /*
 Exercise 17
