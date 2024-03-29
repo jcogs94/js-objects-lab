@@ -174,6 +174,18 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 Solve Exercise 12 here:
 */
 
+game.catchPokemon = pokemonObj => {
+  game.party.push(pokemonObj);
+  for (let item of game.items) {
+    if (item.name === 'pokeball')
+      item.quantity--;
+  }
+}
+
+game.catchPokemon(pokemon[62]);
+printPartyNames();
+console.log(game.items[1].name + ': ' + game.items[1].quantity);
+
 /*
 Exercise 13
 1. Similar to Exercise 7, now complete gyms with a difficulty below 6. How will you approach this?
