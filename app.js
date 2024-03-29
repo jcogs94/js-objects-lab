@@ -250,6 +250,16 @@ This method should:
 Solve Exercise 15 here:
 */
 
+game.partyCount = () => {
+  let count = 0;
+  for (let poke of game.party) {
+    count++;
+  }
+  return count;
+}
+
+console.log('There are currently ' + game.partyCount() + ' pokemon in your party.');
+
 /*
 Exercise 16
 1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
