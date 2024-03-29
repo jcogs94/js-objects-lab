@@ -367,6 +367,7 @@ game.catchPokemon = pokemonObj => {
         else
           game.party.push(pokemonObj);
       }
+      break;
     }   
   }
 }
