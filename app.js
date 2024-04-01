@@ -381,30 +381,38 @@ If there is not a match, then return a string noting that the selected Pokemon d
 Solve Exercise 20 here:
 */
 
-game.items[1].quantity = 4;
+game.items[1].quantity = 1;
 
 game.catchPokemon = pokemonName => {
+  let caughtPokemon;
+  let foundPokemon = false;
+  let nameInput = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1).toLowerCase();
+
   for (let entry of pokemon) {
-    if (entry.name.toLowerCase() === pokemonName.toLowerCase()) {
-      console.log("pokemon found.");
+    if (entry.name === nameInput) {
+      caughtPokemon = entry;
+      foundPokemon = true;
     }
   }
 
-  // if (game.items[1].quantity > 1) {
-  //   game.items[1].quantity--;
-  //   console.log(`You caught ${pokemonObj.name} successfully!`);
-  //   if (game.partyCount() === 6) {
-  //     game.collection.push(pokemonObj);
-  //     console.log(`${pokemonObj.name} was sent to Bill's PC.`);
-  //   }
-  //   else
-  //     game.party.push(pokemonObj);
-  // }
-  // else
-  //   console.log(`There are not enough pokeballs to catch ${pokemonObj.name}.`);
+  if (foundPokemon === false) {
+    console.log(`Selected pokemon (${nameInput}) does not exist.`);
+  }
+  else if (game.items[1].quantity > 0) {
+    game.items[1].quantity--;
+    console.log(`You caught ${caughtPokemon.name} successfully!`);
+    if (game.partyCount() === 6) {
+      game.collection.push(caughtPokemon);
+      console.log(`${caughtPokemon.name} was sent to Bill's PC.`);
+    }
+    else
+      game.party.push(caughtPokemon);
+  }
+  else
+    console.log(`There are not enough pokeballs to catch ${caughtPokemon.name}.`);
 }
 
-game.catchPokemon('gyAraDos');
+game.catchPokemon('seAdRa');
 // console.log(game.items);
 // console.log(game);
 
