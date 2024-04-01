@@ -294,7 +294,7 @@ Exercise 17
 Solve Exercise 17 here:
 */
 
-// console.log(game);
+console.log(game);
 
 // >> LEVEL UP << //
 /*
@@ -468,10 +468,13 @@ for (let entry of pokemon) {
   }
 }
 
-// Testing method to determine how many pokemon are in each type
-pokemonSortedByType.typeCount();
+// // Testing method to determine how many pokemon are in each type
+// pokemonSortedByType.typeCount();
 
-// console.log(pokemonSortedByType);
+console.log(pokemonSortedByType);
 
-// console.log(game);
-// console.dir(pokemon, { maxArrayLength: null })
+
+
+// >> GAME TEST AT END <<
+console.log(game);
+console.dir(pokemon, { maxArrayLength: null })
