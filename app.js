@@ -442,6 +442,36 @@ Log the object when it's constructed.
 Solve Exercise 21 here:
 */
 
+const pokemonSortedByType = {
+  // Method added to count how many pokemon have been sorted to each type and display result
+  typeCount() {
+    console.log('>> This is the amount of pokemon in each sorted type <<');
+    for (key in pokemonSortedByType) {
+      if (Array.isArray(pokemonSortedByType[key])) {
+        let category = key.charAt(0).toUpperCase() + key.slice(1);
+        let count = 0;
+        for (entry in pokemonSortedByType[key])
+          count++;
+
+        console.log(`${category}: ${count}`);
+      }
+    }
+  }
+};
+
+for (let entry of pokemon) {
+  if (`${entry.type}` in pokemonSortedByType)
+    pokemonSortedByType[entry.type].push(entry);
+  else {
+    pokemonSortedByType[entry.type] = [];
+    pokemonSortedByType[entry.type].push(entry);
+  }
+}
+
+// Testing method to determine how many pokemon are in each type
+pokemonSortedByType.typeCount();
+
+// console.log(pokemonSortedByType);
 
 // console.log(game);
 // console.dir(pokemon, { maxArrayLength: null })
